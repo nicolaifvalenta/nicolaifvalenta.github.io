@@ -15,7 +15,7 @@
   --accent-soft: #2f6d4b59;
   --wash: #f1f0ea;
   color-scheme: light;
-  --page: 44rem;
+  --page: 40rem;
   --note-w: 13.5rem;
   --note-gap: 2rem;
 }
@@ -43,16 +43,15 @@ a:hover, a:focus-visible { text-decoration-color: currentColor; }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: .25rem .5rem; z-index: 10; }
 
-/* Masthead: name left, nav right, one rule. */
-.masthead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1.5rem; }
-.name { margin: 0; font-weight: 400; font-size: 2.2rem; line-height: 1.1; letter-spacing: .005em; }
+/* Masthead: the name, and a quiet line of links beneath it. */
+.masthead { display: block; margin-bottom: 2.6rem; }
+.name { margin: 0 0 .35rem; font-weight: 400; font-size: 2.6rem; line-height: 1.05; letter-spacing: -.005em; }
 .name a { color: var(--ink); text-decoration: none; }
-nav { font-size: 1.25rem; }
-nav a { text-decoration: none; color: var(--accent); }
-nav a:hover { text-decoration: underline; }
-nav a[aria-current="page"] { color: var(--ink); }
-nav .bar { margin: 0 .55em; color: var(--muted); }
-.rule { border: 0; border-top: 2px solid var(--accent); margin: .7rem 0 2rem; }
+nav { font-size: 1.05rem; font-variant-caps: all-small-caps; letter-spacing: .09em; }
+nav a { text-decoration: none; color: var(--accent); margin-right: 1.6em; padding-bottom: .1em; border-bottom: 1px solid transparent; }
+nav a:hover { border-bottom-color: var(--accent-soft); }
+nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.rule { display: none; }
 
 /* Headings */
 h1, h2, h3 { font-weight: 500; line-height: 1.2; }
@@ -77,10 +76,9 @@ hr.fleuron, .prose hr {
   margin: 2.2rem auto;
 }
 
-/* About */
-.about { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 0 2.2rem; align-items: start; }
-.portrait { display: block; width: 100%; max-width: 16rem; height: auto; margin: 0 0 1rem; }
-.contact { font-size: 1.05rem; line-height: 1.45; padding-top: .3rem; }
+/* About: the text leads; the photo sits inside it. */
+.about::after { content: ""; display: block; clear: both; }
+.portrait { float: right; width: 11.5rem; max-width: 40%; height: auto; margin: .35rem 0 .8rem 1.8rem; }
 .bio p:first-child { margin-top: 0; }
 .recent { margin-top: 2.4rem; }
 .recent h2 { margin-top: 0; }
@@ -153,9 +151,7 @@ details p { margin: .4rem 0 0 1.1rem; max-width: 34rem; }
 
 @media (max-width: 40rem) {
   body { font-size: 1.15rem; }
-  .name { font-size: 1.8rem; }
-  .about { grid-template-columns: 1fr; }
-  .contact { margin-bottom: 1rem; }
+  .name { font-size: 2.1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .preview { transition: none; } }
 @media print { nav, .colophon-line, .preview { display: none; } body { background: #fff; color: #000; } }
