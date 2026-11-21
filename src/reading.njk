@@ -14,7 +14,7 @@ search: true
 
 <ul class="books" id="books">
 {%- for b in collections.books %}
-  <li class="book" data-s="{{ b.data.title }} {{ b.data.author }} {{ b.templateContent | striptags }}">
+  <li class="book" data-s="{{ b.data.title }} {{ b.data.author }}">
     <div class="cover">
       {%- if b.fileSlug | hasCover %}<img src="/img/covers/{{ b.fileSlug }}.jpg" alt="" loading="lazy">
       {%- else %}<span class="nocover"><span>{{ b.data.title }}</span></span>{% endif %}
