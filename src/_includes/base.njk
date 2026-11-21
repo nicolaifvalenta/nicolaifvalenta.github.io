@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light">
   <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
   <link rel="preload" href="/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v={{ build.id }}">
   {% if math %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css">{% endif %}
 </head>
 <body>
@@ -28,9 +28,9 @@
 
     <footer class="colophon-line">
       <hr class="fleuron" aria-hidden="true">
-      <p><a href="/colophon/">colophon</a> · <a href="/feed.xml">feed</a></p>
+      <p><a href="/feed.xml">feed</a></p>
     </footer>
   </div>
-  <script src="/js/site.js"></script>
+  <script src="/js/site.js?v={{ build.id }}"></script>
 </body>
 </html>
