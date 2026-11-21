@@ -159,3 +159,26 @@ details p { margin: .4rem 0 0 1.1rem; max-width: 34rem; }
 }
 @media (prefers-reduced-motion: reduce) { .preview { transition: none; } }
 @media print { nav, .colophon-line, .preview { display: none; } body { background: #fff; color: #000; } }
+
+/* Reading: every book, with its cover */
+.lede { margin: 0 0 1.4rem; color: var(--muted); font-style: italic; }
+.booksearch { margin: 0 0 1.6rem; }
+.booksearch input { width: 100%; font: inherit; font-size: 1.1rem; color: var(--ink); background: transparent;
+  border: 0; border-bottom: 1px solid var(--accent-soft); border-radius: 0; padding: .35rem 0; outline: none; }
+.booksearch input:focus { border-bottom-color: var(--accent); }
+.booksearch input::placeholder { color: var(--muted); font-style: italic; }
+.books { list-style: none; padding: 0; margin: 0; }
+.book { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); gap: 1.3rem; padding: 1.15rem 0; }
+.book + .book { border-top: 1px solid var(--accent-soft); }
+.book[hidden], .none[hidden], .booksearch[hidden] { display: none; }
+.cover img { display: block; width: 100%; height: auto; border: 1px solid var(--accent-soft); }
+.nocover { display: flex; align-items: center; justify-content: center; aspect-ratio: 2 / 3; padding: .4rem;
+  background: var(--wash); border: 1px solid var(--accent-soft); text-align: center; font-size: .78rem; line-height: 1.15;
+  font-style: italic; color: var(--muted); }
+.info h3 { margin: 0; font-size: 1.3rem; font-weight: 500; line-height: 1.2; }
+.byline { margin: .1rem 0 0; font-size: 1.05rem; color: var(--muted); }
+.rating { font-variant-numeric: lining-nums; }
+.note { margin-top: .45rem; font-size: 1.12rem; line-height: 1.45; }
+.note p { margin: 0 0 .6em; }
+.note p:last-child { margin-bottom: 0; }
+.none { color: var(--muted); font-style: italic; }

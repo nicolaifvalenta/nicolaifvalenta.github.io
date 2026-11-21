@@ -3,6 +3,8 @@ import footnote from "markdown-it-footnote";
 import texmath from "markdown-it-texmath";
 import katex from "katex";
 import anchor from "markdown-it-anchor";
+import fs from "node:fs";
+import { fetchCovers } from "./scripts/fetch-covers.mjs";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 const MONTHS = ["January","February","March","April","May","June","July",
@@ -35,6 +37,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("src/writing/*.md").sort((a, b) => b.date - a.date)
   );
+
+  // Book covers: fetched once from Open Library, then kept in src/img/covers.
+  eleventyConfig.on("eleventy.before", fetchCovers);
+  eleventyConfig.addFilter("hasCover", (slug) => fs.existsSync(`src/img/covers/${slug}.jpg`));
+  eleventyConfig.addCollection("books", (api) =>
+    api.getFilteredByGlob("src/books/*.md").sort((a, b) => b.date - a.date));
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
