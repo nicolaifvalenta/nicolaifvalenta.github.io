@@ -161,7 +161,7 @@ details p { margin: .4rem 0 0 1.1rem; max-width: 34rem; }
 @media print { nav, .colophon-line, .preview { display: none; } body { background: #fff; color: #000; } }
 
 /* Reading: every book, with its cover */
-.lede { margin: 0 0 1.4rem; color: var(--muted); font-style: italic; }
+.lede { margin: 0 0 1.4rem; color: var(--muted); }
 .booksearch { margin: 0 0 1.6rem; }
 .booksearch input { width: 100%; font: inherit; font-size: 1.1rem; color: var(--ink); background: transparent;
   border: 0; border-bottom: 1px solid var(--accent-soft); border-radius: 0; padding: .35rem 0; outline: none; }
