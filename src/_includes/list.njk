@@ -1,0 +1,9 @@
+<ul class="listing">
+{%- for post in recent %}
+  <li>
+    <span class="when">{{ post.date | longDate }}</span>
+    <a class="ttl" href="{{ post.url }}">{{ post.data.title }}</a>
+    {%- if post.data.description %}<span class="blurb">{{ post.data.description }}</span>{% endif %}
+  </li>
+{%- endfor %}
+</ul>

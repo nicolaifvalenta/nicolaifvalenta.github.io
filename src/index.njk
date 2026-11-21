@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: About
+---
+<section class="about">
+  <div class="side">
+    <img class="portrait" src="/img/photo.jpg" alt="Photograph of {{ site.name }}" width="549" height="700">
+  <div class="contact">
+    {{ site.affiliation | safe }}<br>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a><br><br>
+    Here is my <a href="/cv.pdf">CV</a>.
+  </div>
+  </div>
+  <div class="prose bio">
+    <p>I am a student of philosophy at [your university], interested in [your areas]. This is a placeholder for the two or three sentences you write yourself, in your own voice.</p>
+    <p>Before this, I studied [places]. I also keep a <a href="/writing/">blog</a>, where I think out loud about things that do not fit into papers.</p>
+  </div>
+</section>
+
+<section class="recent">
+  <h2>Recent writing</h2>
+  {% set recent = collections.posts | head(5) %}
+  {% include "list.njk" %}
+  <p class="more"><a href="/writing/">All writing →</a></p>
+</section>

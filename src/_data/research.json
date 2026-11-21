@@ -1,0 +1,14 @@
+[
+  {
+    "title": "A Sample Paper Title: Subtitle in Roman, After the Colon",
+    "venue": "forthcoming in <em>Journal Name</em>",
+    "abstract": "Replace this with your abstract. Two or three sentences is plenty; the reader can click through to the PDF for the rest.",
+    "pdf": "/papers/sample-paper.pdf"
+  },
+  {
+    "title": "Another Sample Paper",
+    "venue": "under review",
+    "abstract": "A second placeholder. Status lines can be anything plain: <em>under review</em>, <em>draft available on request</em>, <em>in preparation</em>.",
+    "pdf": ""
+  }
+]

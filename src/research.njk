@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Research
+---
+<h2 class="page-title">Research</h2>
+<ol class="papers">
+{%- for p in research %}
+  <li>
+    <p class="paper-title">{{ p.title }}</p>
+    <p class="paper-venue">{{ p.venue | safe }}{% if p.pdf %} · <a href="{{ p.pdf }}">pdf</a>{% endif %}</p>
+    <details>
+      <summary>abstract</summary>
+      <p>{{ p.abstract | safe }}</p>
+    </details>
+  </li>
+{%- endfor %}
+</ol>
