@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<article class="bookpage">
+  <p class="crumb"><a href="/reading/">&larr; Reading</a></p>
+  <header class="bookhead">
+    <div class="cover">
+      {%- if page.fileSlug | hasCover %}<img src="/img/covers/{{ page.fileSlug }}.jpg" alt="Cover of {{ title }}">
+      {%- else %}<span class="nocover"><span>{{ title }}</span></span>{% endif %}
+    </div>
+    <div class="info">
+      <h1><em>{{ title }}</em></h1>
+      <p class="byline">{{ author }}</p>
+      <p class="facts">{% if rating %}{{ rating }}/10{% endif %}{% if rating and date %} · {% endif %}{% if date %}read {{ date | monthYear }}{% endif %}{% if link %} · <a href="{{ link }}">link</a>{% endif %}</p>
+    </div>
+  </header>
+  {%- if content | summaryOf %}<p class="summary">{{ content | summaryOf | safe }}</p>{% endif %}
+  <div class="prose notes">
+    {{ content | notesOf | safe }}
+  </div>
+</article>

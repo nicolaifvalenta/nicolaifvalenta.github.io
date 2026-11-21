@@ -32,6 +32,14 @@ export default function (eleventyConfig) {
     return `${x.getUTCDate()} ${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`;
   });
   eleventyConfig.addFilter("head", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("monthYear", (d) => { const x = new Date(d); return `${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`; });
+  // The first paragraph of a book file is its summary; the rest is the notes.
+  eleventyConfig.addFilter("summaryOf", (html) => (String(html).match(/<p>([\s\S]*?)<\/p>/) || [])[1] || "");
+  eleventyConfig.addFilter("notesOf", (html) => {
+    html = String(html);
+    const m = html.match(/<p>[\s\S]*?<\/p>\s*/);
+    return m ? html.slice(m.index + m[0].length) : html;
+  });
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
 
   eleventyConfig.addCollection("posts", (api) =>

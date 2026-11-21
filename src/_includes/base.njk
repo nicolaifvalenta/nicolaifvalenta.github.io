@@ -17,7 +17,7 @@
     <header class="masthead">
       <h1 class="name"><a href="/">{{ site.name }}</a></h1>
       <nav aria-label="Primary">
-        <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a><span class="bar" aria-hidden="true">|</span><a href="/writing/"{% if page.url == "/writing/" or tags and "posts" in tags %} aria-current="page"{% endif %}>writing</a><span class="bar" aria-hidden="true">|</span><a href="/reading/"{% if page.url == "/reading/" %} aria-current="page"{% endif %}>reading</a>
+        <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a><span class="bar" aria-hidden="true">|</span><a href="/writing/"{% if page.url == "/writing/" or tags and "posts" in tags %} aria-current="page"{% endif %}>writing</a><span class="bar" aria-hidden="true">|</span><a href="/reading/"{% if page.url == "/reading/" or tags and "books" in tags %} aria-current="page"{% endif %}>reading</a>
       </nav>
     </header>
     <hr class="rule">

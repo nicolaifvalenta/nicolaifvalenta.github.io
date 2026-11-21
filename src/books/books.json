@@ -1,1 +1,5 @@
-{ "tags": "books", "permalink": false }
+{
+  "layout": "book.njk",
+  "tags": "books",
+  "permalink": "/reading/{{ page.fileSlug }}/index.html"
+}

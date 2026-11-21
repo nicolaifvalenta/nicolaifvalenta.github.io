@@ -5,12 +5,11 @@ permalink: /reading/index.html
 search: true
 ---
 <h2 class="page-title">Reading</h2>
-<p class="lede">Books I have read, with a rating out of 10 and, sometimes, a few thoughts.</p>
+<p class="lede">Books and papers I have read, with a rating out of 10 and my notes on each. Tap one to see them.</p>
 
 {% if collections.books.length %}
-
 <div class="booksearch" id="booksearch" hidden>
-  <input type="search" id="q" placeholder="Search {{ collections.books.length }} books" aria-label="Search my books" autocomplete="off">
+  <input type="search" id="q" placeholder="Search {{ collections.books.length }} books and papers" aria-label="Search my reading" autocomplete="off">
 </div>
 
 <ul class="books" id="books">
@@ -21,14 +20,14 @@ search: true
       {%- else %}<span class="nocover"><span>{{ b.data.title }}</span></span>{% endif %}
     </div>
     <div class="info">
-      <h3><em>{{ b.data.title }}</em></h3>
+      <h3><a href="{{ b.url }}"><em>{{ b.data.title }}</em></a></h3>
       <p class="byline">{{ b.data.author }}{% if b.data.rating %}<span class="rating"> · {{ b.data.rating }}/10</span>{% endif %}</p>
-      {%- if b.templateContent | trim %}<div class="note">{{ b.templateContent | safe }}</div>{% endif %}
+      {%- if b.templateContent | summaryOf %}<p class="summary">{{ b.templateContent | summaryOf | safe }}</p>{% endif %}
     </div>
   </li>
 {%- endfor %}
 </ul>
-<p class="none" id="none" hidden>No book matches that.</p>
+<p class="none" id="none" hidden>Nothing matches that.</p>
 {% else %}
 <p class="none">Nothing here yet.</p>
 {% endif %}
