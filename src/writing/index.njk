@@ -5,5 +5,9 @@ permalink: /writing/index.html
 tags: writing-index
 ---
 <h2 class="page-title">Writing</h2>
+{% if collections.posts.length %}
 {% set recent = collections.posts %}
 {% include "list.njk" %}
+{% else %}
+<p class="prose">Nothing here yet.</p>
+{% endif %}

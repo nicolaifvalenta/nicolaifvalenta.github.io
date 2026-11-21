@@ -7,19 +7,20 @@ title: About
     <img class="portrait" src="/img/photo.jpg" alt="Photograph of {{ site.name }}" width="549" height="700">
   <div class="contact">
     {{ site.affiliation | safe }}<br>
-    <a href="mailto:{{ site.email }}">{{ site.email }}</a><br><br>
-    Here is my <a href="/cv.pdf">CV</a>.
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
   </div>
   </div>
   <div class="prose bio">
-    <p>I am a student of philosophy at [your university], interested in [your areas]. This is a placeholder for the two or three sentences you write yourself, in your own voice.</p>
-    <p>Before this, I studied [places]. I also keep a <a href="/writing/">blog</a>, where I think out loud about things that do not fit into papers.</p>
+    <p>I am an undergraduate student of philosophy at <a href="https://liberalarts.utexas.edu/philosophy/">The University of Texas at Austin</a>. I find particularly interesting: philosophy of mind, philosophy of language, and philosophy of science.</p>
+    <p>More recreationally, I enjoy existentialism, at least of a Nietzschean sort, because I think it gets at something the analytic method doesn&rsquo;t.</p>
   </div>
 </section>
 
+{% if collections.posts.length %}
 <section class="recent">
   <h2>Recent writing</h2>
   {% set recent = collections.posts | head(5) %}
   {% include "list.njk" %}
-  <p class="more"><a href="/writing/">All writing →</a></p>
+  <p class="more"><a href="/writing/">All writing &rarr;</a></p>
 </section>
+{% endif %}
