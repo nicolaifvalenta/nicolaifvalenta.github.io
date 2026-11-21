@@ -26,10 +26,6 @@
       {{ content | safe }}
     </main>
 
-    <footer class="colophon-line">
-      <hr class="fleuron" aria-hidden="true">
-      <p>Made by hand. Last updated {{ build.date | longDate }}.</p>
-    </footer>
   </div>
   <script src="/js/site.js?v={{ build.id }}"></script>
   {% if search %}<script src="/js/reading.js?v={{ build.id }}"></script>{% endif %}
