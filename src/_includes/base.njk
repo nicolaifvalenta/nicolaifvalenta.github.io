@@ -17,7 +17,7 @@
     <header class="masthead">
       <h1 class="name"><a href="/">{{ site.name }}</a></h1>
       <nav aria-label="Primary">
-        <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a><a href="/writing/"{% if page.url == "/writing/" or tags and "posts" in tags %} aria-current="page"{% endif %}>writing</a>
+        <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a><span class="bar" aria-hidden="true">|</span><a href="/writing/"{% if page.url == "/writing/" or tags and "posts" in tags %} aria-current="page"{% endif %}>writing</a>
       </nav>
     </header>
     <hr class="rule">
@@ -28,7 +28,7 @@
 
     <footer class="colophon-line">
       <hr class="fleuron" aria-hidden="true">
-      <p><a href="/feed.xml">feed</a></p>
+      <p><a href="/feed.xml">feed</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </footer>
   </div>
   <script src="/js/site.js?v={{ build.id }}"></script>

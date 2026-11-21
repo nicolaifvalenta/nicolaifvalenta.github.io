@@ -3,11 +3,16 @@ layout: base.njk
 title: About
 ---
 <section class="about">
-  <img class="portrait" src="/img/photo.jpg" alt="Photograph of {{ site.name }}" width="549" height="700">
+  <div class="side">
+    <img class="portrait" src="/img/photo.jpg" alt="Photograph of {{ site.name }}" width="549" height="700">
+  <div class="contact">
+    {{ site.affiliation | safe }}<br>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </div>
+  </div>
   <div class="prose bio">
     <p>I am an undergraduate student of philosophy at <a href="https://liberalarts.utexas.edu/philosophy/">The University of Texas at Austin</a>. I find particularly interesting: philosophy of mind, philosophy of language, and philosophy of science.</p>
     <p>More recreationally, I enjoy existentialism, at least of a Nietzschean sort, because I think it gets at something the analytic method doesn&rsquo;t.</p>
-    <p>You can write to me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
 </section>
 
