@@ -29,6 +29,7 @@ export default function (eleventyConfig) {
     const x = new Date(d);
     return `${x.getUTCDate()} ${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`;
   });
+  eleventyConfig.addFilter("rotate", (arr, n) => arr.slice(n).concat(arr.slice(0, n)));
   eleventyConfig.addFilter("head", (arr, n) => arr.slice(0, n));
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
 
