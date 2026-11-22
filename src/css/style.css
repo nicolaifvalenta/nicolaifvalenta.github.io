@@ -168,7 +168,6 @@ details p { margin: .4rem 0 0 1.1rem; max-width: 34rem; }
   border: 1px solid var(--muted); border-radius: 0;
   padding: .5rem .8rem .5rem 2.5rem; outline: none; -webkit-appearance: none; appearance: none;
 }
-.booksearch input:focus { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 1px; }
 .booksearch input::placeholder { color: var(--muted); font-style: normal; opacity: 1; }
 .books { list-style: none; padding: 0; margin: 0; }
 .book { position: relative; display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); gap: 1.3rem; padding: 1.15rem 0; }
