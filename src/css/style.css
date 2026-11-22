@@ -195,3 +195,5 @@ details p { margin: .4rem 0 0 1.1rem; max-width: 34rem; }
 .bookpage > .summary { margin: 0 0 1.6rem; font-size: 1.25rem; line-height: 1.5; padding-bottom: 1.4rem; border-bottom: 1px solid var(--accent-soft); }
 .notes p { margin: 0 0 1em; }
 @media (max-width: 40rem) { .bookhead { grid-template-columns: 4.6rem minmax(0, 1fr); gap: 1.1rem; } .bookhead h1 { font-size: 1.6rem; } }
+.booksearch input::-webkit-search-cancel-button, .booksearch input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; display: none; }
+.booksearch input::-ms-clear { display: none; }
